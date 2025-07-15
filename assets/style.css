@@ -108,3 +108,10 @@ strong {
         padding: 16px 8px 12px 8px;
     }
 }
+        .qr-img { width: 160px; height: 160px; }
+        .edit-btn { background: none; border: none; cursor: pointer; margin-left: 8px; font-size: 1.1em; vertical-align: middle; display: flex; align-items: center; gap: 4px; }
+        .edit-form { display: none; margin-top: 8px; }
+        .show-edit .edit-form { display: block; }
+        .show-edit .display-row { display: none; }
+        .qr-header-row { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 8px; }
+        .qr-title-row { display: flex; align-items: center; gap: 8px; }

@@ -10,20 +10,18 @@ $data = getData($conn, $search);
 <head>
     <title>QR Code Generator</title>
     <link rel="stylesheet" href="assets/style.css">
-    <style>
-        .qr-img { width: 160px; height: 160px; }
-        .edit-btn { background: none; border: none; cursor: pointer; margin-left: 8px; font-size: 1.1em; vertical-align: middle; display: flex; align-items: center; gap: 4px; }
-        .edit-form { display: none; margin-top: 8px; }
-        .show-edit .edit-form { display: block; }
-        .show-edit .display-row { display: none; }
-        .qr-header-row { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 8px; }
-        .qr-title-row { display: flex; align-items: center; gap: 8px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="stylesheet" href="https://bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- should put this on the style sheet/style.css -->
 </head>
 <body>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>QR Code Generator</h1>
 <!-- QR Code Generation Form -->
-<h2>Generate QR Code</h2>
 <form action="save.php" method="POST">
     <!-- Title input -->
     <input type="text" name="title" placeholder="Enter Name/Title" required>
@@ -32,8 +30,10 @@ $data = getData($conn, $search);
     <button type="submit">Generate</button>
 </form>
 
-<!-- Search Form -->
-<form method="GET" style="margin-bottom: 32px;">
+        </div>
+
+        <div class="col-md-8">
+            <form method="GET" style="margin-bottom: 32px;">
     <input type="text" name="search" placeholder="Search by title..." value="<?= htmlspecialchars($search ?? '') ?>">
     <button type="submit">Search</button>
 </form>
@@ -83,6 +83,16 @@ $data = getData($conn, $search);
 <?php else: ?>
     <p>No saved QR codes.</p>
 <?php endif; ?>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Search Form -->
+
 
 <!-- JavaScript for toggling edit mode -->
 <script>
